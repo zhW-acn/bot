@@ -10,3 +10,11 @@
 ## Documentation
 
 See [Docs](https://nonebot.dev/)
+
+
+
+TODO
+- 加减卡【机厅独立】
+- 堵门卡【机厅独立】
+- 早八卡
+- 被窝卡

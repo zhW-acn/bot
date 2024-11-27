@@ -1,19 +1,10 @@
-import time
-
-from nonebot import on_keyword, on_command, on_fullmatch
-from nonebot.adapters.onebot.v11 import GroupMessageEvent,Message
-from nonebot.matcher import Matcher
-from nonebot.params import Arg, CommandArg, ArgPlainText
+from nonebot import on_keyword
+from nonebot.adapters.onebot.v11 import Message
+from nonebot.internal.matcher import Matcher
+from nonebot.internal.params import Arg, ArgPlainText
+from nonebot.params import CommandArg
 
 Demo = on_keyword({'weather'})
-bot_time = on_fullmatch('\n几点了', block=True)
-
-
-@bot_time.handle()
-async def time_handle(event: GroupMessageEvent):
-    localtime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
-    await bot_time.finish(Message(f"[CQ:at,qq={event.user_id}]") + localtime)
-
 
 @Demo.handle()
 async def test_handle(matcher: Matcher, args: Message = CommandArg()):
